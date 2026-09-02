@@ -30,8 +30,6 @@ Host: <target>
 
 The server returns the requested user object without requiring valid authentication or authorization.
 
-![BOLA — single user lookup with no auth](./screenshots/api-vuln01-single-user.png)
-
 #### Full user dump
 
 ```http
@@ -41,7 +39,11 @@ Host: <target>
 
 The endpoint returns multiple user records without authorization, enabling bulk data exposure.
 
-![BOLA — full user list dumped with no auth](./screenshots/api-vuln01-full-dump.png)
+### Evidence
+
+![VAmPI BOLA evidence — unauthenticated user-list and single-user responses](./screenshots/vampi-api-bola-evidence.png)
+
+The evidence image contains both proof-of-concept requests: the unauthenticated `GET /users/v1` full user dump and the unauthenticated `GET /users/v1/admin` single-user lookup.
 
 ### Impact
 
